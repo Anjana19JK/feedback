@@ -1,6 +1,15 @@
 const ResourceItem = props => {
-  const {resourcesDetails} = props
+  const {resourcesDetails, updateNewPage} = props
   const {id, name, imageUrl, loveEmojiUrl} = resourcesDetails
+  const updateNewPage=()=>{
+     <div>
+        <img src={loveEmojiUrl} alt="love emoji" />
+        <h1>Thank You!</h1>
+    </div>
+  }
+  
+  const onClickResource =(id) =>{
+    updateNewPage()
 
   return (
     <li>
@@ -9,10 +18,6 @@ const ResourceItem = props => {
         <p>{name}</p>
       </div>
     </li>
-    <div>
-        <img src={loveEmojiUrl} alt="love emoji" />
-        <h1>Thank You!</h1>
-    </div>
   )
 }
 export default ResourceItem
